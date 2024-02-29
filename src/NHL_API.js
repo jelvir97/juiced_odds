@@ -18,6 +18,16 @@ class NHL_API {
         return data
     }
 
+    static async getStandings(){
+        const {data} =  await axios.get(`${BASE_URL}/nhl-api/standings`)
+        return data 
+    }
+
+    static async getTeamStats(team){
+        const {data} = await axios.get(`${BASE_URL}/nhl-api/${team}/stats`)
+        return data;
+    }
+
 }
 
 export default NHL_API;
