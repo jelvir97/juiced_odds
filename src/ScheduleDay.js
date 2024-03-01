@@ -8,8 +8,8 @@ const ScheduleDay = ({ day }) => {
   return (
     <div className="mt-1">
       <Disclosure >
-        <Disclosure.Button className="py-2 bg-gray-200 w-full border-solid rounded-xl hover:bg-slate-400">
-          <h2 className="bold">{day.dayAbbrev}</h2>
+        <Disclosure.Button className="p-2 bg-gray-200 w-7/12 border-solid rounded-xl hover:bg-slate-400">
+          <h2 className=" font-bold text-xl text-left">{day.dayAbbrev}  {day.date.substring(5)}</h2>
         </Disclosure.Button>
         <Disclosure.Panel className="text-gray-500">
           <div className="rounded-xl">

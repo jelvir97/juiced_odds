@@ -14,7 +14,7 @@ const TeamsList = ()=>{
     },[])
 
     return(
-        <div className="grid grid-flow-row-dense grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-flow-row-dense grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full">
             {teams ? teams.map( t => <TeamCard key={t.triCode} abbrev={t.triCode}/>) : ''}
         </div>
     )

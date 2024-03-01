@@ -17,14 +17,14 @@ const PlayerCard = ({player})=>{
         <>
         <div 
             onClick={openModal}
-            className="flex flex-col justify-center items-center bg-slate-300 rounded-2xl h-52 w-52 m-4 p-4
-                        transition ease-in-out hover:scale-110 hover:bg-slate-400 shadow-xl hover:-z-0 duration-300">
+            className="flex flex-col justify-center items-center bg-transparent rounded-2xl h-52 w-52 m-4 p-4
+                        transition ease-in-out hover:scale-125 hover:-z-0 duration-300">
 
-            <img src={player.headshot} className=" rounded-full h-32 bg-stone-50"/>
+            <img src={player.headshot} className=" rounded-full h-32 bg-stone-50 shadow-xl"/>
             <h1 className="">{player.firstName.default} {player.lastName.default}</h1>
 
             <div className="flex justify-between">
-                 <span className=" font-bold">{player.positionCode}</span>
+                 <span className=" font-bold ">{player.positionCode}</span>
                  <span className=" mx-4"><span className="font-bold">GF: </span> {player.goals}</span>
                  <span className=""><span className="font-bold">A: </span> {player.assists}</span>
             </div>

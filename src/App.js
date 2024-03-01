@@ -14,15 +14,17 @@ function App() {
   return (
     <div>
         <NavigationBar/>
+        <div className='flex justify-center w-screen'> 
+          <Routes>
+            <Route exact path="/profile" element={<h1>Profile</h1>} />
+            <Route exact path="/standings" element={<Standings />} />
+            <Route exact path="/teams" element={<TeamsList />}/>
+            <Route exact path="/schedule" element={<Schedule />}/>
+            <Route path= "/:team/stats" element={<TeamPage/>}/>
+            <Route path="/" element={<h1>Home</h1>}/>
+          </Routes>
+        </div>
 
-        <Routes>
-          <Route exact path="/profile" element={<h1>Profile</h1>} />
-          <Route exact path="/standings" element={<Standings />} />
-          <Route exact path="/teams" element={<TeamsList />}/>
-          <Route exact path="/schedule" element={<Schedule />}/>
-          <Route path= "/:team/stats" element={<TeamPage/>}/>
-          <Route path="/" element={<h1>Home</h1>}/>
-        </Routes>
         
     </div>
 

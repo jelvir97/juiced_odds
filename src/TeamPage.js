@@ -16,7 +16,7 @@ const TeamPage = ()=>{
         getTeamStats()
     },[])
     return(
-        <div className="flex flex-wrap m-4">
+        <div className="flex flex-wrap m-4 justify-center">
             {teamStats ? teamStats.skaters.map( s => <PlayerCard key={s.playerId} player={s}/>) : ""}
         </div>
     )
