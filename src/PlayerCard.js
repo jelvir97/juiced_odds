@@ -18,7 +18,7 @@ const PlayerCard = ({player})=>{
         <div 
             onClick={openModal}
             className="flex flex-col justify-center items-center bg-slate-300 rounded-2xl h-52 w-52 m-4 p-4
-                        transition ease-in-out hover:scale-110 hover:bg-slate-400 shadow-xl">
+                        transition ease-in-out hover:scale-110 hover:bg-slate-400 shadow-xl hover:-z-0 duration-300">
 
             <img src={player.headshot} className=" rounded-full h-32 bg-stone-50"/>
             <h1 className="">{player.firstName.default} {player.lastName.default}</h1>
