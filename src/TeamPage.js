@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import NHL_API from "./NHL_API";
 
+import PlayerCard from "./PlayerCard";
+
 const TeamPage = ()=>{
     const {team} = useParams()
     const [teamStats, setTeamStats] = useState()
@@ -14,8 +16,8 @@ const TeamPage = ()=>{
         getTeamStats()
     },[])
     return(
-        <div>
-            {teamStats ? teamStats.skaters.map( s => <h1>{s.firstName.default} {s.lastName.default}</h1>) : ""}
+        <div className="flex flex-wrap m-4">
+            {teamStats ? teamStats.skaters.map( s => <PlayerCard key={s.playerId} player={s}/>) : ""}
         </div>
     )
 }
