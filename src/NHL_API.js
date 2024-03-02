@@ -9,7 +9,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 class NHL_API {
 
     static async getCurrentSchedule(date='now'){
-        const {data} = await axios.get(`${BASE_URL}/nhl-api/schedule`)
+        const {data} = await axios.get(`${BASE_URL}/nhl-api/schedule?date=${date}`)
         return data;
     }
 
@@ -27,6 +27,12 @@ class NHL_API {
         const {data} = await axios.get(`${BASE_URL}/nhl-api/${team}/stats`)
         return data;
     }
+
+    static async getGamePredictions(gameIDs){
+        const {data} = await axios.post(`${BASE_URL}/nhl/predictions`, {gameIDs})
+        return data
+    }
+    
 
 }
 
