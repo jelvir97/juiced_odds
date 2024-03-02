@@ -4,7 +4,7 @@ import ScheduleDay from "./ScheduleDay";
 import { yesterdaysDate } from "./helpers/dateFormats";
 import PredictionsContext from "./PredictionsContext";
 
-const Schedule = ()=>{
+const Schedule = ({title})=>{
 
     const [schedule, setSchedule] = useState()
     const [predictions, setPredictions] = useState()
@@ -31,6 +31,8 @@ const Schedule = ()=>{
 
     return (
         <div className="container">
+
+          <h1 className="text-2xl">{title ? title : 'Recent and Upcoming'}</h1>
           <PredictionsContext.Provider value={predictions}>
             {schedule ? schedule.map((day) =>{
                       

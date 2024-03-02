@@ -7,7 +7,7 @@ import TeamPage from './TeamPage';
 import Standings from './Standings'
 import { useState, useEffect } from 'react';
 
-import Schedule from './Schedule';
+import Dashboard from './Dashboard';
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
             <Route exact path="/profile" element={<h1>Profile</h1>} />
             <Route exact path="/standings" element={<Standings />} />
             <Route exact path="/teams" element={<TeamsList />}/>
-            <Route exact path="/schedule" element={<Schedule />}/>
+            <Route exact path="/dash" element={<Dashboard />}/>
             <Route path= "/:team/stats" element={<TeamPage/>}/>
             <Route path="/" element={<h1>Home</h1>}/>
           </Routes>
