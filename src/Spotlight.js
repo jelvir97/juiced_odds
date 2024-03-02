@@ -20,7 +20,7 @@ const Spotlight = ()=>{
         for(let i = 0; i<players.length; i+=2){
             arr.push(
                 (
-                    <div className="w-full flex-col justify-center items-center">
+                    <div className="w-full flex-col justify-center items-center" key={players[i].playerId + players[i+1].playerId}>
                         {players[i] ?  <SpotlightPlayerCard key={players[i].playerId} player={players[i]}/>:  ""}
                         {players[i+1] ? <SpotlightPlayerCard key={players[i+1].playerId} player={players[i+1]}/>:  ""}
                     </div>

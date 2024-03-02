@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import {NavLink} from "react-router-dom"
 import logo from "../src/orange-svgrepo-com.png"
-
+import GoogleButton from "./GoogleButton";
+import UserContext from "./UserContext";
 
 const NavigationBar = ()=>{
+    const user = useContext(UserContext)
     return (
 
             <nav className="flex justify-evenly items-center bg-orange-400 h-20 z-50">
@@ -15,8 +17,11 @@ const NavigationBar = ()=>{
                                                 transition ease-in-out hover:scale-125 duration-300">Teams</NavLink>
                 <NavLink  to="/standings" className="mx-3 font-bold hover:text-white
                                                     transition ease-in-out hover:scale-125 duration-300">Standings</NavLink>
-                <NavLink  to="/profile" className="mx-3 font-bold hover:text-white
-                                                    transition ease-in-out hover:scale-125 duration-300">Profile</NavLink>
+
+                {user ? <button className="mx-3 font-bold hover:text-white
+                                                    transition ease-in-out hover:scale-125 duration-300">Logout</button> : <GoogleButton />}
+
+                
                 
             </nav>
 
