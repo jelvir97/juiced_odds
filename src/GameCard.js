@@ -19,7 +19,7 @@ const GameCard = ({game})=>{
     }
 
     return (
-        <div className="flex flex-col items-center align-middle rounded-2xl mt-1 odd:bg-slate-100 py-2 relative w-7/12">
+        <div className="flex flex-col items-center align-middle rounded-2xl mt-1 odd:bg-blue-gray-100 py-2 relative w-full">
             <span className={"absolute top-4 left-4 "+ (game.gameState ==="LIVE" ? "text-green-500 underline bold" : "")}>&#8226; {status[game.gameState]}</span>
             <div className="flex items-center">
 

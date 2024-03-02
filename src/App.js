@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
         <NavigationBar/>
-        <div className='flex justify-center w-screen'> 
+        <div className='flex justify-center w-screen my-5 mx-7'> 
           <Routes>
             <Route exact path="/profile" element={<h1>Profile</h1>} />
             <Route exact path="/standings" element={<Standings />} />

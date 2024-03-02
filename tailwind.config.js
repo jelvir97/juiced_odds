@@ -5,7 +5,9 @@ module.exports = withMT({
   theme: {
     extend: {
       height:{
-        '112': '28rem'
+        '112': '28rem',
+        '120': '30rem',
+        '136': '34rem'
       }
     },
   },

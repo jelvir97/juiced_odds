@@ -33,7 +33,7 @@ const Spotlight = ()=>{
     }
 
     return(
-        <div className="w-80 h-3/6 rounded-2xl bg-blue-gray-50 py-5">
+        <div className="w-80 h-136 rounded-2xl bg-blue-gray-50 py-5">
         <h1 className=" text-center text-xl
         ">Players to Watch</h1>
         <Carousel

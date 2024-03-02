@@ -30,7 +30,7 @@ const Schedule = ({title})=>{
     },[])
 
     return (
-        <div className="container">
+        <div className="container col-span-2">
 
           <h1 className="text-2xl">{title ? title : 'Recent and Upcoming'}</h1>
           <PredictionsContext.Provider value={predictions}>
