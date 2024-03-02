@@ -28,6 +28,11 @@ class NHL_API {
         return data;
     }
 
+    static async getSpotlight(){
+        const {data} = await axios.get(`${BASE_URL}/nhl-api/spotlight`)
+        return data;
+    }
+
     static async getGamePredictions(gameIDs){
         const {data} = await axios.post(`${BASE_URL}/nhl/predictions`, {gameIDs})
         return data
