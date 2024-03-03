@@ -25,7 +25,7 @@ function App() {
            "Access-Control-Allow-Credentials": true,
          },
        });
-       setUser(()=> ({user: data.user, "logOut": logOut}));
+       setUser(()=> ({user: data.user, "logOut": logOut, 'setUser': setUser}));
       }catch{
         return null;
       }

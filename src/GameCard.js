@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 import PredictionsContext from "./PredictionsContext";
 import PredictionTable from "./PredictionTable"
-
+import User from "./User_API";
+import UserContext from "./UserContext";
 
 import logos from './logos.json'
 
@@ -10,6 +11,7 @@ const GameCard = ({game})=>{
     const home = game.homeTeam
 
     const predictions = useContext(PredictionsContext)
+    const UC = useContext(UserContext)
 
     const status = {
         'OFF' : "PAST",
@@ -17,6 +19,36 @@ const GameCard = ({game})=>{
         "LIVE" : "LIVE",
         "FINAL": "FINAL"
     }
+
+    const trackGame = async(gameID)=>{
+        const status = await User.trackNHL(gameID)
+        if(status !== 201) return
+
+        const newUser = {
+            ...UC.user,
+            nhlGames: [...UC.user.nhlGames, gameID.toString()]
+        }
+
+        UC.setUser(()=>({
+            ...UC,
+            user: newUser
+        }))
+    };
+
+    const untrackGame = async(gameID)=>{
+        const status = await User.untrackNHL(gameID)
+        if(status !== 200) return
+
+        const newUser = {
+            ...UC.user,
+            nhlGames: UC.user.nhlGames.filter((id)=> id !==gameID.toString())
+        }
+
+        UC.setUser(()=>({
+            ...UC,
+            user: newUser
+        }))
+    };
 
     return (
         <div className="flex flex-col items-center align-middle rounded-2xl mt-1 odd:bg-blue-gray-100 py-2 relative w-full">
@@ -44,7 +76,9 @@ const GameCard = ({game})=>{
                 {predictions[game.id] ? <PredictionTable predictions={predictions[game.id]}/> : ''}
 
             
-
+            {UC.user.nhlGames.includes(game.id.toString()) ? 
+                <button onClick={()=>untrackGame(game.id)}>Untrack</button>
+                : <button onClick={()=>trackGame(game.id)}>track</button> }
         </div>
     )
 }
