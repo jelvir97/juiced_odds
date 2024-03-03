@@ -25,7 +25,7 @@ function App() {
            "Access-Control-Allow-Credentials": true,
          },
        });
-       setUser(()=> data.user);
+       setUser(()=> ({user: data.user, "logOut": logOut}));
       }catch{
         return null;
       }
@@ -35,6 +35,24 @@ function App() {
     console.log(user)
     
   },[])
+
+  const logOut = async (e)=>{
+    e.preventDefault()
+    try{
+        const resp = await axios.post('http://localhost:3001/logout', {},{
+        withCredentials: "include",
+        headers: {
+        Accept: "application/json",
+          "Content-Type": "application/json",
+        "Access-Control-Allow-Credentials": true,
+      }
+      })
+      console.log(resp)
+      if(resp.status === 200) setUser(null)
+    }catch(err){
+      console.log(err)
+    }
+  }
   
   
   return (

@@ -18,7 +18,7 @@ const NavigationBar = ()=>{
                 <NavLink  to="/standings" className="mx-3 font-bold hover:text-white
                                                     transition ease-in-out hover:scale-125 duration-300">Standings</NavLink>
 
-                {user ? <button className="mx-3 font-bold hover:text-white
+                {user ? <button onClick={user.logOut} className="mx-3 font-bold hover:text-white
                                                     transition ease-in-out hover:scale-125 duration-300">Logout</button> : <GoogleButton />}
 
                 
