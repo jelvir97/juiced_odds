@@ -41,7 +41,7 @@ const Dashboard = ()=>{
     return(
         <TrackedContext.Provider value={{tracked, setTracked}}>
             <PredictionsContext.Provider value={predictions}>
-            <div className="w-full grid grid-flow-row-dense grid-cols-3 grid-rows-1 h-full gap-7">
+            <div className="w-full grid grid-flow-row-dense grid-cols-3 grid-rows-1 h-full gap-7 place-items-center">
                 <div className="w-full h-full col-span-2 flex flex-col divide-y-2 gap-8">
                     {tracked ? <TrackedGames games={tracked}/> :"loading"}
                     <Schedule schedule={schedule}/>

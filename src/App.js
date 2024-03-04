@@ -57,10 +57,10 @@ function App() {
   
   
   return (
-    <div>
+    <div className='w-full'>
       <UserContext.Provider value={user} >
         <NavigationBar/>
-        <div className='flex justify-center w-screen my-5 mx-7'> 
+        <div className='flex justify-center w-screen my-5 p-3'> 
           <Routes>
             <Route element={<ProtectedRoutes />} >
               <Route exact path="/profile" element={<h1>Profile</h1>} />
