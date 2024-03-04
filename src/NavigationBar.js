@@ -5,21 +5,27 @@ import GoogleButton from "./GoogleButton";
 import UserContext from "./UserContext";
 
 const NavigationBar = ()=>{
-    const user = useContext(UserContext)
+    const UC = useContext(UserContext)
     return (
 
-            <nav className="flex justify-evenly items-center bg-orange-400 h-20 z-50">
+            <nav className="flex justify-evenly items-center bg-orange-400 h-20 z-50 relative">
                 <NavLink  to="/" className="absolute"><img src={logo} className="fixed top-2 left-2 max-h-16 z-50 
                                             transition ease-in-out hover:scale-125 hover:translate-x-1 hover:translate-y-1 duration-300"/></NavLink>                
-                <NavLink  to="/dash" className="mx-3 font-bold hover:text-white
-                                                    transition ease-in-out hover:scale-125 duration-300">Dashboard</NavLink>              
-                <NavLink  to="/teams" className="mx-3 font-bold hover:text-white
-                                                transition ease-in-out hover:scale-125 duration-300">Teams</NavLink>
-                <NavLink  to="/standings" className="mx-3 font-bold hover:text-white
-                                                    transition ease-in-out hover:scale-125 duration-300">Standings</NavLink>
+                
 
-                {user ? <button onClick={user.logOut} className="mx-3 font-bold hover:text-white
-                                                    transition ease-in-out hover:scale-125 duration-300">Logout</button> : <GoogleButton />}
+                {UC.user ? (<>
+                                
+                                <NavLink  to="/dash" className="mx-3 font-bold hover:text-white
+                                                    transition ease-in-out hover:scale-125 duration-300">Dashboard</NavLink>              
+                                <NavLink  to="/teams" className="mx-3 font-bold hover:text-white
+                                                transition ease-in-out hover:scale-125 duration-300">Teams</NavLink>
+                                <NavLink  to="/standings" className="mx-3 font-bold hover:text-white
+                                                    transition ease-in-out hover:scale-125 duration-300">Standings</NavLink> 
+                                <button onClick={UC.logOut} className="mx-3 font-bold hover:text-white
+                                                    transition ease-in-out hover:scale-125 duration-300">Logout</button> 
+                            </>)
+                                                    
+                            : <div className="absolute right-8 top-5"><GoogleButton /></div>}
 
                 
                 

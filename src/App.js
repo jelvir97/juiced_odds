@@ -6,13 +6,14 @@ import NHL_API from './NHL_API';
 import TeamsList from './TeamsList';
 import TeamPage from './TeamPage';
 import Standings from './Standings'
+import ProtectedRoutes from './ProtectedRoutes';
 import { useState, useEffect } from 'react';
 
 import Dashboard from './Dashboard';
 import UserContext from './UserContext';
 
 function App() {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState({})
 
   useEffect(()=>{
     const getUser = async () => {
@@ -48,7 +49,7 @@ function App() {
       }
       })
       console.log(resp)
-      if(resp.status === 200) setUser(null)
+      if(resp.status === 200) setUser({})
     }catch(err){
       console.log(err)
     }
@@ -61,11 +62,14 @@ function App() {
         <NavigationBar/>
         <div className='flex justify-center w-screen my-5 mx-7'> 
           <Routes>
-            <Route exact path="/profile" element={<h1>Profile</h1>} />
-            <Route exact path="/standings" element={<Standings />} />
-            <Route exact path="/teams" element={<TeamsList />}/>
-            <Route exact path="/dash" element={<Dashboard />}/>
-            <Route path= "/:team/stats" element={<TeamPage/>}/>
+            <Route element={<ProtectedRoutes />} >
+              <Route exact path="/profile" element={<h1>Profile</h1>} />
+              <Route exact path="/standings" element={<Standings />} />
+              <Route exact path="/teams" element={<TeamsList />}/>
+              <Route exact path="/dash" element={<Dashboard />}/>
+              <Route path= "/:team/stats" element={<TeamPage/>}/>
+            </Route>
+
             <Route path="/" element={<h1>Home</h1>}/>
           </Routes>
         </div>
