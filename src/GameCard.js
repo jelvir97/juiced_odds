@@ -6,6 +6,7 @@ import UserContext from "./UserContext";
 import { gameTime } from "./helpers/dateFormats";
 
 import logos from './logos.json'
+import TrackedContext from "./TrackedContext";
 
 const GameCard = ({game})=>{
     const away = game.awayTeam
@@ -13,6 +14,7 @@ const GameCard = ({game})=>{
 
     const predictions = useContext(PredictionsContext)
     const UC = useContext(UserContext)
+    const {tracked, setTracked} = useContext(TrackedContext)
 
     const status = {
         'OFF' : "PAST",
@@ -34,6 +36,7 @@ const GameCard = ({game})=>{
             ...UC,
             user: newUser
         }))
+        setTracked(()=>[...tracked, game])
     };
 
     const untrackGame = async(gameID)=>{
@@ -49,6 +52,8 @@ const GameCard = ({game})=>{
             ...UC,
             user: newUser
         }))
+
+        setTracked(()=>tracked.filter(g=> g.id !== gameID))
     };
 
     return (
@@ -67,14 +72,9 @@ const GameCard = ({game})=>{
                     <img src={logos[home.abbrev]} className="w-14 max-h-16 place-self-start"/>
                     <h2 className="font-bold mt-3 place-self-center">{home.abbrev}</h2>
                 </div>
-
-                
-                
-                
             </div>
 
-
-                {predictions[game.id] ? <PredictionTable predictions={predictions[game.id]}/> : ''}
+            {UC && predictions[game.id] ? <PredictionTable predictions={predictions[game.id]}/> : ''}
 
             <span className="absolute top-4 right-4">
             {UC && game.gameState === 'FUT' ?
