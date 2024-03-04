@@ -26,7 +26,7 @@ const TeamPage = ()=>{
 
     },[])
     return(
-        <div className="w-11/12">
+        <div className="w-11/12 pt-4">
             <h1 className="text-3xl font-extrabold"><img className="h-14 inline mr-5" src={logos[team]} /> {team}</h1>
             {teamStats ? <> 
                             <h1 className="text-2xl font-bold mt-4 mb-2">Centers</h1>

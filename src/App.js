@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
 
 import Dashboard from './Dashboard';
 import UserContext from './UserContext';
+import HomePage from './HomePage';
 
 function App() {
   const [user, setUser] = useState({})
@@ -60,7 +61,7 @@ function App() {
     <div className='w-full'>
       <UserContext.Provider value={user} >
         <NavigationBar/>
-        <div className='flex justify-center w-screen my-5 px-3'> 
+        <div className='flex justify-center w-screen '> 
           <Routes>
             <Route element={<ProtectedRoutes />} >
               <Route exact path="/profile" element={<h1>Profile</h1>} />
@@ -70,7 +71,7 @@ function App() {
               <Route path= "/:team/stats" element={<TeamPage/>}/>
             </Route>
 
-            <Route path="/" element={<h1>Home</h1>}/>
+            <Route path="/" element={<HomePage />}/>
           </Routes>
         </div>
       </UserContext.Provider>
