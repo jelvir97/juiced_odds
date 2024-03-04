@@ -9,4 +9,14 @@ const yesterdaysDate = ()=>{
     return arr.join('-')
 }
 
-export {yesterdaysDate};
+const gameTime = (strUTC)=>{
+    const d = new Date(Date.parse(strUTC))
+    const dStr = d.toLocaleTimeString()
+
+    const meridiem = dStr.substring(dStr.length - 2)
+    const digits = dStr.split(':')
+
+    return digits[0]+ ':'+ digits[1]+ ' ' + meridiem
+}
+
+export {yesterdaysDate, gameTime};

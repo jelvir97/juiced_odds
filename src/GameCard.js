@@ -3,6 +3,7 @@ import PredictionsContext from "./PredictionsContext";
 import PredictionTable from "./PredictionTable"
 import User from "./User_API";
 import UserContext from "./UserContext";
+import { gameTime } from "./helpers/dateFormats";
 
 import logos from './logos.json'
 
@@ -52,7 +53,7 @@ const GameCard = ({game})=>{
 
     return (
         <div className="flex flex-col items-center align-middle rounded-2xl mt-1 odd:bg-blue-gray-100 py-2 relative w-full">
-            <span className={"absolute top-4 left-4 "+ (game.gameState ==="LIVE" ? "text-green-500 underline bold" : "")}>&#8226; {status[game.gameState]}</span>
+            <span className={"absolute top-4 left-4 "+ (game.gameState ==="LIVE" ? "text-green-500 underline bold" : "")}>&#8226; {status[game.gameState]} {game.gameState ==="FUT" ?gameTime(game.startTimeUTC) : ""}</span>
             <div className="flex items-center">
 
                 <div className="grid grid-cols-1 justify-items-center">
@@ -75,10 +76,16 @@ const GameCard = ({game})=>{
 
                 {predictions[game.id] ? <PredictionTable predictions={predictions[game.id]}/> : ''}
 
+            <span className="absolute top-4 right-4">
+            {UC && game.gameState === 'FUT' ?
+                (UC.user.nhlGames.includes(game.id.toString()) ? 
+                <button className=" bg-red-500 rounded-2xl text-white text-sm py-1 px-2 hover:scale-110" onClick={()=>untrackGame(game.id)}>Untrack</button>
+                : <button className="bg-light-green-500 rounded-2xl text-white text-sm py-1 px-2 hover:scale-110" onClick={()=>trackGame(game.id)}>track</button> )
+                    
+                : ""
+            }
+            </span>
             
-            {UC.user.nhlGames.includes(game.id.toString()) ? 
-                <button onClick={()=>untrackGame(game.id)}>Untrack</button>
-                : <button onClick={()=>trackGame(game.id)}>track</button> }
         </div>
     )
 }
