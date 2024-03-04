@@ -5,7 +5,7 @@ const StandingsTable = ({division})=>{
     return (
         <table className="w-full border-collapse my-4 overflow-hidden">
             <thead>
-            <tr className="grid grid-cols-12 bg-slate-300 rounded-2xl py-2 px-4 z-20 text-lg">
+            <tr className="grid grid-cols-12 bg-slate-300 py-2 px-4 z-20 text-lg w-full border-b">
                 <th className=" col-span-4 ">Team</th>
                 <th className=" col-span-1">GP</th>
                 <th className="">W</th>

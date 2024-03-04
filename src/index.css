@@ -18,7 +18,7 @@ code {
 
 .active{
   /* Add whatever CSS style will make your link look active. The example below (in my case) */
-  @apply underline;
+  @apply underline text-white;
 }
 
 .gsi-material-button {

@@ -3,6 +3,7 @@ import React from "react";
 const StandingsTableCell = ({data})=>{
     return (<td className="
                         hover:bg-bottom
+                        
                         text-center 
                         relative 
                         hover:before:bg-orange-500/50 
