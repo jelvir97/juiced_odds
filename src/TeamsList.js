@@ -8,6 +8,7 @@ const TeamsList = ()=>{
     useEffect(()=>{
         const getTeams = async ()=>{
             const t = await NHL_API.getTeamsList()
+            console.log(t)
             setTeams(t)
         }
         getTeams()
