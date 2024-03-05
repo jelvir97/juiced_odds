@@ -11,23 +11,24 @@ jest.mock('./NHL_API',() => ({
 
 
 
-test('renders correctly', ()=>{
-    console.log(NHL_API.getTeamsList())
-    render(
-        <MemoryRouter>
+test('renders correctly', async ()=>{
+    await waitFor(()=>{
+        render(<MemoryRouter>
             <TeamsList />
         </MemoryRouter>
-        )
+    )
+    })
     })
 
-test('matches snapshot', ()=>{
-    const {asFragment} = render(
-        <MemoryRouter>
+test('matches snapshot', async ()=>{
+    await waitFor(()=>{
+        render(<MemoryRouter>
             <TeamsList />
         </MemoryRouter>
-        )
+    )
+    })
 
-    expect(asFragment).toMatchSnapshot()
+    expect(await screen.asFragment).toMatchSnapshot()
 })
 
 test('team abbrev found on page', async ()=>{

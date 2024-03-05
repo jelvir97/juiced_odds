@@ -4,7 +4,6 @@ import { Carousel, IconButton } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/20/solid";
 
 const PlayerCarousel = ({players})=>{
-    console.log(players)
     const displayPlayers = ()=>{
         const playersCopy =[...players]
         const arr = []

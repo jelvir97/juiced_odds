@@ -8,7 +8,7 @@ import logos from "./logos.json"
 const TeamPage = ()=>{
     const {team} = useParams()
     const [teamStats, setTeamStats] = useState()
-
+    
     const [centers, setCenters] = useState()
     const [defense, setDefense] = useState()
     const [wingers, setWingers] = useState()
@@ -16,7 +16,6 @@ const TeamPage = ()=>{
         const getTeamStats = async ()=>{
             const stats = await NHL_API.getTeamStats(team)
             setTeamStats(()=> stats)
-
             setCenters(() => stats.skaters.filter(p => p.positionCode === "C"))
             setDefense(() => stats.skaters.filter(p => p.positionCode === "D"))
             setWingers(() => stats.skaters.filter(p => p.positionCode === "R" || p.positionCode === "L"))
