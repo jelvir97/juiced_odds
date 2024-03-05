@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!axios)/' --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,7 +40,15 @@
       "last 1 safari version"
     ]
   },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
   "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "babel-jest": "^29.7.0",
     "tailwindcss": "^3.4.1"
   }
 }
