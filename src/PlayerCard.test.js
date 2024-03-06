@@ -1,7 +1,7 @@
 import { render, screen, waitFor, act } from '@testing-library/react';
 import PlayerCard from './PlayerCard';
 import { MemoryRouter } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
+
 
 const testPlayer = {
     "playerId": 1,
