@@ -104,7 +104,6 @@ test('correct text', async()=>{
         </UserContext.Provider>
 
     )
-    screen.debug()
 
     expect(await screen.findByText('TOR')).toBeInTheDocument()
     expect(await screen.findByText('BUF')).toBeInTheDocument()
