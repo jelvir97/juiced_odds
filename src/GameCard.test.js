@@ -127,7 +127,6 @@ test('correct text: predictions', async()=>{
     await act(async()=>{
         await user.click(predictionsBtn)
     })
-    screen.debug()
 
     expect(await screen.findByText('Money Line %')).toBeInTheDocument()
     expect(await screen.findByText('Model ML Odds')).toBeInTheDocument()
