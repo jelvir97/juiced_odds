@@ -9,7 +9,7 @@ const ScheduleDay = ({ day }) => {
     <div className="mt-1">
       <Disclosure >
         <Disclosure.Button className="p-2 bg-gray-200 w-full border-solid rounded-xl hover:bg-blue-gray-400">
-          <h2 className=" font-bold text-xl text-left">{day.dayAbbrev}  {day.date.substring(5)}</h2>
+          <h2 className=" font-bold text-xl text-left">{day.dayAbbrev} {day.date.substring(5)}</h2>
         </Disclosure.Button>
         <Disclosure.Panel className="text-gray-500">
           <div className="rounded-xl">
