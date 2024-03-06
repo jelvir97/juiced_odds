@@ -15,7 +15,7 @@ const PlayerCard = ({player})=>{
 
     return(
         <>
-        <div 
+        <div id={"player"+player.firstName.default}
             onClick={openModal}
             className="flex flex-col justify-center items-center bg-transparent rounded-2xl h-52 w-52 m-4 p-4
                         transition ease-in-out hover:scale-125 hover:-z-0 duration-300">

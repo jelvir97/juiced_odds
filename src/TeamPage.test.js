@@ -1,4 +1,5 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor, act } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import TeamPage from './TeamPage';
 import { MemoryRouter } from 'react-router-dom';
 import NHL_API from './NHL_API';
@@ -149,7 +150,6 @@ test('matches snapshot', async ()=>{
 })
 
 test('correct text in DOM', async ()=>{
-    //jest.spyOn(require('react-router-dom'), 'useParams').mockReturnValue({ team: 'TOR' });
     await waitFor(()=>{
         render(
             <MemoryRouter initialEntries={['/TOR/stats']}>
