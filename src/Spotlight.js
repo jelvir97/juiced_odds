@@ -49,6 +49,7 @@ const Spotlight = ()=>{
       )}
       nextArrow={({ handleNext }) => (
         <IconButton
+          data-testid="next-arrow"
           size="lg"
           variant="text"
           onClick={handleNext}
