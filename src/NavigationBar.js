@@ -4,6 +4,13 @@ import logo from "../src/orange-svgrepo-com.png"
 import GoogleButton from "./GoogleButton";
 import UserContext from "./UserContext";
 
+/**
+ * NavigationBar Component
+ * 
+ * Renders Links based off of UserContext
+ * 
+ * No context- renders only Sign in with Google Button
+ */
 const NavigationBar = ()=>{
     const UC = useContext(UserContext)
     return (

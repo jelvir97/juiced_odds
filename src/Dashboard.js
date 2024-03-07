@@ -8,6 +8,14 @@ import PredictionsContext from "./PredictionsContext";
 import UserContext from "./UserContext";
 import TrackedContext from "./TrackedContext";
 
+/**
+ * Dashboard Component
+ * 
+ * Makes calls to server for schedule, and predicitons
+ * 
+ * Renders page with weekly schedule, tracked games, and player spotlight.
+ * 
+ */
 const Dashboard = ()=>{
 
     const [schedule, setSchedule] = useState()

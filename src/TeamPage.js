@@ -4,6 +4,13 @@ import NHL_API from "./NHL_API";
 import PlayerCarousel from "./PlayerCarousel";
 import logos from "./logos.json"
 
+/**
+ * TeamPage Component
+ * 
+ * Makes call to server for team player stats
+ * 
+ * Renders players grouped by position.
+ */
 
 const TeamPage = ()=>{
     const {team} = useParams()

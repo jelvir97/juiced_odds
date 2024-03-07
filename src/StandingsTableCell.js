@@ -1,5 +1,9 @@
 import React from "react";
-
+/**
+ * StandingsTableCell
+ * 
+ * Primarily abstracted for column highlighting
+ */
 const StandingsTableCell = ({data})=>{
     return (<td className="
                         hover:bg-bottom
@@ -18,16 +22,3 @@ const StandingsTableCell = ({data})=>{
 }
 
 export default StandingsTableCell;
-
-// `
-// td:hover::after { 
-//     background-color: #ffa;
-//     content: '';  
-//     height: 10000px;    
-//     left: 0;
-//     position: absolute;  
-//     top: -5000px;
-//     width: 100%;
-//     z-index: -1;        
-// }
-// `

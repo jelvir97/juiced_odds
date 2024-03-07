@@ -3,7 +3,17 @@ import PlayerCard from "./PlayerCard";
 import { Carousel, IconButton } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/20/solid";
 
+
+/**
+ * Player Carousel Component
+ * 
+ * Displays player Cards in carousel
+ */
 const PlayerCarousel = ({players})=>{
+
+    /**
+     * Returns array of groups of 4 Players.
+     */
     const displayPlayers = ()=>{
         const playersCopy =[...players]
         const arr = []

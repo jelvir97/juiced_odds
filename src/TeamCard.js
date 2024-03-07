@@ -2,6 +2,11 @@ import React from "react";
 import logos from "./logos.json";
 import { Link } from "react-router-dom";
 
+/**
+ * TeamCard
+ * 
+ * Renders team Abbreviation and logo
+ */
 const TeamCard = ({ abbrev }) => {
   return (
     <Link to={`/${abbrev}/stats`}>

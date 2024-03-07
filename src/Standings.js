@@ -3,6 +3,16 @@ import NHL_API from "./NHL_API";
 import StandingsTable from "./StandingsTable";
 import { Tab } from "@headlessui/react";
 
+
+/**
+ * Standings Component
+ * 
+ * Calls server for standings.
+ * 
+ * Renders standings by division.
+ * 
+ * Divisions toggle by tabs
+ */
 const Standings = () => {
   const [standings, setStandings] = useState();
 

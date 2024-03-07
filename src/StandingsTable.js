@@ -1,6 +1,11 @@
 import React from "react";
 import StandingsTableRow from "./StandingsTableRow";
 
+/**
+ * Standings Table
+ * 
+ * Renders list of Teams as StandingsTableRow
+ */
 const StandingsTable = ({division})=>{
     return (
         <table className="w-full border-collapse my-4 overflow-hidden">

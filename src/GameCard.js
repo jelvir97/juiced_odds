@@ -8,6 +8,13 @@ import { gameTime } from "./helpers/dateFormats";
 import logos from './logos.json'
 import TrackedContext from "./TrackedContext";
 
+/**
+ * GameCard Component
+ * 
+ * Takes in game object as a prop
+ * 
+ * Renders game matchup, score, status, time and predictions.
+ */
 const GameCard = ({game})=>{
     const away = game.awayTeam
     const home = game.homeTeam
@@ -22,7 +29,9 @@ const GameCard = ({game})=>{
         "LIVE" : "LIVE",
         "FINAL": "FINAL"
     }
-
+    /**
+     * Event handler for tracking a game
+     */
     const trackGame = async(gameID)=>{
         const status = await User.trackNHL(gameID)
         if(status !== 201) return
@@ -39,6 +48,9 @@ const GameCard = ({game})=>{
         setTracked(()=>[...tracked, game])
     };
 
+    /**
+     * Event handler for untracking a game
+     */
     const untrackGame = async(gameID)=>{
         const status = await User.untrackNHL(gameID)
         if(status !== 200) return

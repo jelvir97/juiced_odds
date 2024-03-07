@@ -13,6 +13,14 @@ import Dashboard from './Dashboard';
 import UserContext from './UserContext';
 import HomePage from './HomePage';
 
+/**
+ * 
+ * Main App component. Everything comes from this.
+ * 
+ * On load, it attempts to get user info from server. Fails if unauthenticated.
+ * 
+ * Unauth load is just homepage. Auth load allows user to see all content.
+ */
 function App() {
   const [user, setUser] = useState({})
 

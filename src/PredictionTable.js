@@ -3,7 +3,11 @@ import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from '@heroicons/react/20/solid'
 
-
+/**
+ * Prediction Table Component
+ * 
+ * Renders table for model and publisher odds/predictions
+ */
 const PredictionTable = ({predictions})=>{
     return (
         

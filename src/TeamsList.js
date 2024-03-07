@@ -2,6 +2,13 @@ import React, {useState, useEffect} from "react";
 import NHL_API from "./NHL_API";
 import TeamCard from "./TeamCard";
 
+/**
+ * Teams List Component
+ * 
+ * Calls Server for list of teams.
+ * 
+ * Renders list of team abbreviations and logos.
+ */
 const TeamsList = ()=>{
     const [teams, setTeams] = useState()
 

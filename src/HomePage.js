@@ -4,6 +4,11 @@ import UserContext from "./UserContext";
 import { Carousel, Typography, Button } from "@material-tailwind/react";
 import GoogleButton from "./GoogleButton";
 
+/**
+ * Home Page with carousel.
+ * 
+ * Prompt to log in.
+ */
 const HomePage = () => {
   const UC = useContext(UserContext);
   return (

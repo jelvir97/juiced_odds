@@ -1,4 +1,9 @@
 
+/**
+ * 
+ * returns yesterdays date formatted as : "YYYY-MM-DD"
+ */
+
 const yesterdaysDate = ()=>{
     const date = new Date()
     date.setDate(date.getDate() - 1)
@@ -8,7 +13,11 @@ const yesterdaysDate = ()=>{
     arr.unshift(arr.pop())
     return arr.join('-')
 }
-
+/**
+ *  takes in UTC string from game 
+ * 
+ *  returns string : "5:00 PM 01/01"
+ */
 const gameTime = (strUTC)=>{
     const d = new Date(Date.parse(strUTC))
     const dStr = d.toLocaleTimeString()

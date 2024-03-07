@@ -4,6 +4,13 @@ import GameCard from "./GameCard";
 
 import { Disclosure } from "@headlessui/react";
 
+/**
+ * Schedule Day.
+ * 
+ * Renders button to open disclosure.
+ * 
+ * Disclosure contains list of GameCard components
+ */
 const ScheduleDay = ({ day }) => {
   return (
     <div className="mt-1">

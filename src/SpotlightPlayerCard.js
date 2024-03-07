@@ -2,6 +2,13 @@ import React from "react";
 import logos from "./logos.json"
 import { Link } from "react-router-dom"
 
+/**
+ * SpotlightPlayerCard
+ * 
+ * Renders player photo, sweater number.
+ * 
+ * Links to team players page.
+ */
 const SpotlightPlayerCard = ({player})=>{
     return(
             

@@ -1,5 +1,9 @@
 import React from "react";
-
+/**
+ * PlayerStatsTableRow Component
+ * 
+ * Renders header and data in a row.
+ */
 const PlayerStatsTableRow = ({header, data})=>{
     return(
         <tr className="odd:bg-white even:bg-slate-50"> 

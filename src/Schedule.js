@@ -1,10 +1,12 @@
 import React, {useState, useEffect, useContext} from "react";
 import ScheduleDay from "./ScheduleDay";
 
-
+/**
+ * Schedule Component
+ * 
+ * Renders list of ScheduleDay components
+ */
 const Schedule = ({title, schedule})=>{
-
-
     return (
         <div className="w-full">
 

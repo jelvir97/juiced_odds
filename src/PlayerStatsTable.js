@@ -1,6 +1,11 @@
 import React from "react";
 import PlayerStatsTableRow from "./PlayerStatsTableRow";
 
+/**
+ * Player Stats Table
+ * 
+ * Renders Player Stats
+ */
 const PlayerStatsTable = ({player})=>{
     return(
         <>

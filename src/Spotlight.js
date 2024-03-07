@@ -4,6 +4,14 @@ import SpotlightPlayerCard from "./SpotlightPlayerCard";
 import { Carousel, IconButton } from "@material-tailwind/react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/20/solid";
 
+
+/**
+ * Spotlight Component
+ * 
+ * Makes call to server for player spotlight.
+ * 
+ * Renders Player Cards in Carousel
+ */
 const Spotlight = ()=>{
     const [players, setPlayers] = useState()
 
@@ -14,7 +22,9 @@ const Spotlight = ()=>{
         }
         getPS()
     },[])
-
+    /**
+     * Displays players in groups of 2.
+     */
     const displayPlayers = ()=>{
         let arr = []
         for(let i = 0; i<players.length; i+=2){

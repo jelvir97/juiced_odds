@@ -1,10 +1,16 @@
 import React from "react";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+
+
+/**
+ * Makes call to server for Google Auth
+ */
 const GoogleButton = () => {
 
     const loginWithGoogle = (ev) => {
         ev.preventDefault();
-        window.open("http://localhost:3001/login/federated/google", "_self");
+        window.open(`${BASE_URL}/login/federated/google`, "_self");
     }
   return (
     <button className="gsi-material-button" onClick={loginWithGoogle}>

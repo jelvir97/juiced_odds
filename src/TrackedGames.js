@@ -1,6 +1,11 @@
 import React from "react"
 import GameCard from "./GameCard"
 
+/**
+ * Tracked Games Component
+ * 
+ * List of GameCards.
+ */
 const TrackedGames = ({games})=>{
     return(
         <div>

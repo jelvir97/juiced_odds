@@ -2,6 +2,11 @@ import React from "react";
 import StandingsTableCell from "./StandingsTableCell";
 import logos from "./logos.json"
 
+/**
+ * StandingsTableRow
+ * 
+ * Renders team standings.
+ */
 const StandingsTableRow = ({team})=>{
     return (
         <tr className="grid grid-cols-12 rounded-2xl hover:text-white hover:bg-blue-gray-700 mt-1 py-1 px-4 odd:bg-white even:bg-blue-gray-100 h-12 items-center">

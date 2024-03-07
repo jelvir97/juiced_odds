@@ -2,6 +2,13 @@ import { Dialog, Transition } from '@headlessui/react'
 import React, { Fragment,useState } from 'react'
 import PlayerStatsTable from './PlayerStatsTable'
 
+/**
+ * PlayerCard Components
+ * 
+ * Small card with Goals Assists and positions code.
+ * 
+ * Clicking opens up modal with more stats.
+ */
 const PlayerCard = ({player})=>{
     const [isOpen, setIsOpen] = useState(false)
 
