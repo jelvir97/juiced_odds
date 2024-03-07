@@ -13,7 +13,7 @@ class User {
     static async login(){
         try{
             const {data}= await axios.get(`${BASE_URL}/login/success`, {
-                withCredentials: "include",
+            withCredentials: true,
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
@@ -34,7 +34,7 @@ class User {
         e.preventDefault()
         try{
             const resp = await axios.post(`${BASE_URL}/logout`, {},{
-            withCredentials: "include",
+            withCredentials: true,
             headers: {
             Accept: "application/json",
               "Content-Type": "application/json",

@@ -50,7 +50,7 @@ class NHL_API {
      * Makes post request with list of ids. Gets back predictions for gameIDs
      */
     static async getGamePredictions(gameIDs){
-        const {data} = await axios.post(`${BASE_URL}/nhl/predictions`, {gameIDs})
+        const {data} = await axios.post(`${BASE_URL}/nhl/predictions`, {gameIDs}, {withCredentials:true})
         return data
     }
     
