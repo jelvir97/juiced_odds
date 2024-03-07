@@ -3,12 +3,6 @@ import TeamsList from './TeamsList';
 import { MemoryRouter } from 'react-router-dom';
 import NHL_API from './NHL_API';
 
-jest.mock('./NHL_API',() => ({
-    ...jest.requireActual('./NHL_API'),
-    getTeamsList: ()=> [{triCode:"TOR"}, {triCode:"MIN"}, {triCode:"STL"}]
-}));
-
-
 
 
 test('renders correctly', async ()=>{

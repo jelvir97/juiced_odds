@@ -30,11 +30,6 @@ const testPlayer = {
     "faceoffWinPctg": 0
 }
 
-global.ResizeObserver = jest.fn().mockImplementation(() => ({
-    observe: jest.fn(),
-    unobserve: jest.fn(),
-    disconnect: jest.fn(),
-}))
 
 test('renders correctly', async()=>{
     await waitFor(()=>{render(
