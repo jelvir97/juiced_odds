@@ -21,7 +21,7 @@ const NavigationBar = ()=>{
                                                 transition ease-in-out hover:scale-125 duration-300">Teams</NavLink>
                                 <NavLink  to="/standings" className="mx-3 font-bold hover:text-white
                                                     transition ease-in-out hover:scale-125 duration-300">Standings</NavLink> 
-                                <button onClick={UC.logOut} className="mx-3 font-bold hover:text-white
+                                <button onClick={(evt)=>UC.logout(evt,UC.setUser)} className="mx-3 font-bold hover:text-white
                                                     transition ease-in-out hover:scale-125 duration-300">Logout</button> 
                             </>)
                                                     

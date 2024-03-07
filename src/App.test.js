@@ -1,19 +1,40 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act, waitFor } from '@testing-library/react';
 import App from './App';
+import { MemoryRouter } from 'react-router-dom';
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
+//could not get it to render with User Auth. user State was never set.
 
-// test('matches snapshot', ()=>{
-//     const {asFragment} =  render(<App />)
+jest.mock('./User_API',() => ({
+  ...jest.requireActual('./User_API'),
+  login : ()=>({
+    email: "test@test.com",
+    firstName: "testFirst",
+    lastName: "testLast",
+    googleID : 'testID',
+    nhlGames : ["2023020990"]
+})
+}))
 
-//     expect(asFragment).toMatchSnapshot()
-// })
+test('renders', async ()=>{
+  await act(async()=>{
+    render(
+        <MemoryRouter>
+                <App />
+        </MemoryRouter>
+        
+    )
+  })
+})
 
+test('matches snapshot', async ()=>{
+  await act(async()=>{
+    render(
+        <MemoryRouter>
+                <App />
+        </MemoryRouter>
+        
+    )
+  })
 
-test('test test', ()=>{
-  expect(1).toEqual(1)
+  expect(await screen.asFragment).toMatchSnapshot()
 })

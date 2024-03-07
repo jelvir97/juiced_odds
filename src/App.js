@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavigationBar from './NavigationBar';
 import axios from 'axios';
-import NHL_API from './NHL_API';
+import User from './User_API';
 import TeamsList from './TeamsList';
 import TeamPage from './TeamPage';
 import Standings from './Standings'
@@ -18,45 +18,13 @@ function App() {
 
   useEffect(()=>{
     const getUser = async () => {
-      try{
-        const {data}= await axios.get("http://localhost:3001/login/success", {
-          withCredentials: "include",
-          headers: {
-           Accept: "application/json",
-            "Content-Type": "application/json",
-           "Access-Control-Allow-Credentials": true,
-         },
-       });
-       setUser(()=> ({user: data.user, "logOut": logOut, 'setUser': setUser}));
-      }catch{
-        return null;
-      }
+      const u = await User.login()
+      if(u) setUser(()=> ({user: u.user, "logout": User.logout, 'setUser': setUser}));    
   }
-  
-    getUser()
-    console.log(user)
+    getUser() 
     
   },[])
 
-  const logOut = async (e)=>{
-    e.preventDefault()
-    try{
-        const resp = await axios.post('http://localhost:3001/logout', {},{
-        withCredentials: "include",
-        headers: {
-        Accept: "application/json",
-          "Content-Type": "application/json",
-        "Access-Control-Allow-Credentials": true,
-      }
-      })
-      console.log(resp)
-      if(resp.status === 200) setUser({})
-    }catch(err){
-      console.log(err)
-    }
-  }
-  
-  
   return (
     <div className='w-full'>
       <UserContext.Provider value={user} >

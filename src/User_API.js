@@ -8,6 +8,40 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 // User class with static methods
 class User {
 
+    static async login(){
+        try{
+            const {data}= await axios.get("http://localhost:3001/login/success", {
+                withCredentials: "include",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Credentials": true,
+            },
+       });
+
+       return data
+    }catch{
+        return null
+    }
+    }
+
+    static async logout(e, setUser){
+        e.preventDefault()
+        try{
+            const resp = await axios.post('http://localhost:3001/logout', {},{
+            withCredentials: "include",
+            headers: {
+            Accept: "application/json",
+              "Content-Type": "application/json",
+            "Access-Control-Allow-Credentials": true,
+          }
+          })
+          if(resp.status === 200) setUser({})
+        }catch(err){
+          console.log(err)
+        }
+      }
+
     static async trackNHL(gameID){
         const {status} = await axios.post(`${BASE_URL}/users/track/nhl_games/${gameID}`,{}, {withCredentials: true})
         return status;
