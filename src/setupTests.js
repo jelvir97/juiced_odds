@@ -293,7 +293,7 @@ jest.mock('./NHL_API',() => ({
             }
         ]
     }),
-    getPredictions: ()=>(
+    getGamePredictions: ()=>(
         {
             "2023020990": {
                 "gameID": "2023020990",
