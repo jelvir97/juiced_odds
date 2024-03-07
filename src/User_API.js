@@ -12,7 +12,7 @@ class User {
      */
     static async login(){
         try{
-            const {data}= await axios.get("http://localhost:3001/login/success", {
+            const {data}= await axios.get(`${BASE_URL}/login/success`, {
                 withCredentials: "include",
             headers: {
                 Accept: "application/json",
@@ -33,7 +33,7 @@ class User {
     static async logout(e, setUser){
         e.preventDefault()
         try{
-            const resp = await axios.post('http://localhost:3001/logout', {},{
+            const resp = await axios.post(`${BASE_URL}/logout`, {},{
             withCredentials: "include",
             headers: {
             Accept: "application/json",
