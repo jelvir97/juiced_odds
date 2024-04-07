@@ -33,11 +33,14 @@ const Dashboard = ()=>{
         gameWeek.forEach(day => {
             for(let game of day.games){
               gameIDs.push(game.id.toString())
-              if(UC.user.nhlGames.includes(game.id.toString())) t.push(game)  
+              if(UC.user && UC.user.nhlGames.includes(game.id.toString())) t.push(game)  
             }
         });
-        const p = await NHL_API.getGamePredictions(gameIDs)
-        setPredictions(()=>p)
+
+        if(UC.user){
+          const p = await NHL_API.getGamePredictions(gameIDs)
+          setPredictions(()=>p)
+        }
         setSchedule(()=>gameWeek)
         setTracked(()=>t)
       }
