@@ -86,10 +86,10 @@ const GameCard = ({game})=>{
                 </div>
             </div>
 
-            {UC && predictions[game.id] ? <PredictionTable predictions={predictions[game.id]}/> : ''}
+            {UC.user && predictions[game.id] ? <PredictionTable predictions={predictions[game.id]}/> : ''}
 
             <span className="absolute top-4 right-4">
-            {UC && game.gameState === 'FUT' ?
+            {UC.user && game.gameState === 'FUT' ?
                 (UC.user.nhlGames.includes(game.id.toString()) ? 
                 <button className=" bg-red-500 rounded-2xl text-white text-sm py-1 px-2 hover:scale-110" onClick={()=>untrackGame(game.id)}>Untrack</button>
                 : <button className="bg-light-green-500 rounded-2xl text-white text-sm py-1 px-2 hover:scale-110" onClick={()=>trackGame(game.id)}>track</button> )
