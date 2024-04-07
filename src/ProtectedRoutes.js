@@ -8,8 +8,10 @@ import UserContext from "./UserContext";
 const ProtectedRoutes = ()=>{
     const UC = useContext(UserContext)
     console.log(UC.user)
-    return ( UC.user ? <Outlet /> : <Navigate to="/" />
-    )
+    // un-comment to protect routes
+    // return ( UC.user ? <Outlet /> : <Navigate to="/" /> )
+
+    return <Outlet />
 }
 
 export default ProtectedRoutes;
