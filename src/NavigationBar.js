@@ -19,8 +19,8 @@ const NavigationBar = ()=>{
                 <NavLink  to="/" className="absolute"><img src={logo} className="fixed top-2 left-2 max-h-16 z-50 
                                             transition ease-in-out hover:scale-125 hover:translate-x-1 hover:translate-y-1 duration-300"/></NavLink>                
                 
-                {/* Uncomment to hide routes. */}
-                {/* {UC.user ? (<> */}
+                
+                {UC.user ? (<>
                                 
                                 <NavLink  to="/dash" className="mx-3 font-bold hover:text-white
                                                     transition ease-in-out hover:scale-125 duration-300">Dashboard</NavLink>              
@@ -28,11 +28,11 @@ const NavigationBar = ()=>{
                                                 transition ease-in-out hover:scale-125 duration-300">Teams</NavLink>
                                 <NavLink  to="/standings" className="mx-3 font-bold hover:text-white
                                                     transition ease-in-out hover:scale-125 duration-300">Standings</NavLink> 
-                                {/* <button onClick={(evt)=>UC.logout(evt,UC.setUser)} className="mx-3 font-bold hover:text-white
+                             <button onClick={(evt)=>UC.logout(evt,UC.setUser)} className="mx-3 font-bold hover:text-white
                                                     transition ease-in-out hover:scale-125 duration-300">Logout</button> 
-                            </>) */}
+                            </>)
                                                     
-                            <div className="absolute right-8 top-5"><GoogleButton /></div>
+                             : <div className="absolute right-8 top-5"><GoogleButton /></div> }
 
                 
             </nav>

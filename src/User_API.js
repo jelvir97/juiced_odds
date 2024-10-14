@@ -20,7 +20,6 @@ class User {
                 "Access-Control-Allow-Credentials": true,
             },
        });
-
        return data
     }catch{
         return null
